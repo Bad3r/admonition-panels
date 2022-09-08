@@ -63,9 +63,9 @@ a.tag[data-ref*="admon-"] {
 }
 
 /* This will hide the bullet for admonition panels */
-[data-refs-self*='admon-'] > div > div > a > .bullet-container {
+/*[data-refs-self*='admon-'] > div > div > a > .bullet-container {
     display: none;
-}
+}*/
 /* Hide brackets for page-refs in panels */
 [data-refs-self*='admon-'] > div > div > div > div > div > .block-content-inner .page-reference .bracket {
     display: none;
@@ -126,7 +126,7 @@ a.tag[data-ref*="admon-"]:after {
 [data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block > .flex > .mr-1 {
     background: var(--ls-secondary-background-color);
     border-left: 4px solid;
-    margin-left: 1px;
+    margin-left: 17px;
 }
 /* Change the style of the last child block */
 [data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block:last-child > .flex > div.mr-1.flex.flex-row.items-center {
@@ -140,9 +140,19 @@ a.tag[data-ref*="admon-"]:after {
 [data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block > .flex > .block-content-wrapper {
     background: var(--ls-secondary-background-color);
     margin-left: -8px;
-    margin-right: 3px;
+    margin-right: 0px;
     padding: 5px;
 }
+
+/* apply background to admonition panels in the references panel */
+.references [data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block > .flex > .block-content-wrapper {
+    background: var(--ls-tertiary-background-color);
+}
+
+.references [data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block > .flex > .mr-1 {
+    background: var(--ls-tertiary-background-color);
+}
+
 /* Forces the bullet to fill the height space of the block */
 [data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block > .flex > div.mr-1.flex.flex-row.items-center {
     height: auto !important;
