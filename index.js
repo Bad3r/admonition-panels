@@ -91,7 +91,7 @@ a.tag[data-ref*="admon-"] {
 }
 /* This will create the body for blocks that contain multiple lines */
 [data-refs-self*='admon-'] > div > div > div > div > div .block-body {
-    background: var(--ls-tertiary-background-color);
+    background: var(--ls-secondary-background-color);
     border-left: 4px solid;
     border-top-left-radius: 0px;
     padding: 15px 10px;
@@ -109,7 +109,7 @@ a.tag[data-ref*="admon-"]:after {
     font-weight: 100;
     position: relative;
     top: 2px;
-    margin-right: -4px;
+    margin-right: 5px;
 }
 
 /* ===  Panel for Child Blocks  === */
@@ -124,7 +124,7 @@ a.tag[data-ref*="admon-"]:after {
     margin-top: -4px;
 }
 [data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block > .flex > .mr-1 {
-    background: var(--ls-tertiary-background-color);
+    background: var(--ls-secondary-background-color);
     border-left: 4px solid;
     margin-left: 1px;
 }
@@ -138,7 +138,7 @@ a.tag[data-ref*="admon-"]:after {
 }
 
 [data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block > .flex > .block-content-wrapper {
-    background: var(--ls-tertiary-background-color);
+    background: var(--ls-secondary-background-color);
     margin-left: -8px;
     margin-right: 3px;
     padding: 5px;
