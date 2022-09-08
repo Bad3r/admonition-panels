@@ -116,12 +116,15 @@ a.tag[data-ref*="admon-"]:after {
 [data-refs-self*="admon-"] > .block-children-container > .block-children-left-border {
     background: transparent;
 }
+[data-refs-self*="admon-"] > .block-children-container > .block-children {
+    border: 0px solid;
+}
 /* Adjust the first child blocks margin to align with top-bar */
 [data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block:first-child > .flex {
-    margin-top: -2px;
+    margin-top: -4px;
 }
 [data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block > .flex > .mr-1 {
-    background: var(--bg-color-2);
+    background: var(--ls-tertiary-background-color);
     border-left: 4px solid;
     margin-left: 1px;
 }
@@ -135,7 +138,7 @@ a.tag[data-ref*="admon-"]:after {
 }
 
 [data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block > .flex > .block-content-wrapper {
-    background: var(--bg-color-2);
+    background: var(--ls-tertiary-background-color);
     margin-left: -8px;
     margin-right: 3px;
     padding: 5px;
