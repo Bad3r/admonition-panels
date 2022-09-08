@@ -24,12 +24,6 @@ function main() {
         },
     )
     logseq.Editor.registerSlashCommand(
-        'Admon - Failure',
-        async () => {
-          await logseq.Editor.insertAtEditingCursor('#admon-failure Failure!')
-        },
-    )
-    logseq.Editor.registerSlashCommand(
         'Admon - Bug',
         async () => {
           await logseq.Editor.insertAtEditingCursor('#admon-bug Bug')
