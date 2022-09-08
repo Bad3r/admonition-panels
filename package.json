@@ -1,11 +1,11 @@
 {
-  "name": "LogTools",
-  "author": "CannibalOx",
-  "version": "0.0.3",
-  "description": "tag a block with: #.v-kanban #.v-eisenhower-matrix #.v-numlist #.v-gallery",
+  "name": "Admonition Panels",
+  "author": "nmartin84",
+  "version": "0.0.1",
+  "description": "tag a parent block with \"#admon-info{warning,tips,failure,danger,quote} to start\"",
   "main": "./index.html",
   "logseq": {
-    "id": "_DuynZ2rejh_logtools",
+    "id": "admonpanels_006574",
     "icon": "icon.png"
   }
 }
