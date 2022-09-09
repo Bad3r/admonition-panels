@@ -53,6 +53,12 @@ function main() {
           await logseq.Editor.insertAtEditingCursor('#admon-question Question')
         },
     )
+    logseq.Editor.registerSlashCommand(
+        'Admon - List',
+        async () => {
+          await logseq.Editor.insertAtEditingCursor('#admon-lists List')
+        },
+    )
     logseq.provideStyle(String.raw`
 /* ======    ADMONITIONS     ====== */
 
@@ -144,6 +150,7 @@ a.tag[data-ref*="admon-"]:after {
     margin-left: -8px;
     margin-right: 3px;
     padding: 5px;
+    width: 100%;
 }
 /* Forces the bullet to fill the height space of the block */
 .content > .blocks-container > div > div > .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block > .flex > div.mr-1.flex.flex-row.items-center {
@@ -230,7 +237,56 @@ a.tag[data-ref*="admon-"]:after {
     height: auto !important;
 }
 
+/*      ===== LISTS PANEL =====     */
+/* Hide Title in Query */
+.color-level > .flex > .initial > div > .blocks-container > .lazy-visibility > .fade-enter > .ls-block[data-refs-self*='admon-lists'] > .block-children-container > .block-children > .ls-block > .flex > .block-content-wrapper .foldable-title, .content > .blocks-container > div > div > .ls-block[data-refs-self*="admon-lists"] > .block-children-container > .block-children > .ls-block > .flex > .block-content-wrapper .foldable-title {
+  display: none;
+}
+
+/* Hide Borders & Remove Padding/Margins on .color-level panels */
+.color-level > .flex > .initial > div > .blocks-container > .lazy-visibility > .fade-enter > .ls-block[data-refs-self*='admon-lists'] .lazy-visibility > .fade-enter > .color-level > .flex > .initial > div, .ls-block[data-refs-self*="admon-lists"] .lazy-visibility > .fade-enter > .color-level > .flex > .initial > div {
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.color-level > .flex > .initial > div > .blocks-container > .lazy-visibility > .fade-enter > .ls-block[data-refs-self*='admon-lists'] .color-level.rounded, .ls-block[data-refs-self*="admon-lists"] .color-level.rounded {
+  margin: 0px !important;
+  padding: 0px;
+}
+
+.color-level > .flex > .initial > div > .blocks-container > .lazy-visibility > .fade-enter > .ls-block[data-refs-self*='admon-lists'] .lazy-visibility > .fade-enter > .color-level > .flex > .initial > div .breadcrumb, .ls-block[data-refs-self*="admon-lists"] .lazy-visibility > .fade-enter > .color-level > .flex > .initial > div .breadcrumb {
+  display: none;
+}
+
+/* hide parent bullet for list panels */
+.color-level > .flex > .initial > div > .blocks-container > .lazy-visibility > .fade-enter > .ls-block[data-refs-self*='admon-lists'] > .block-children-container > .block-children > .ls-block > .flex > .mr-1 .bullet-container, .content > .blocks-container > div > div > .ls-block[data-refs-self*="admon-lists"] > .block-children-container > .block-children > .ls-block > .flex > .mr-1 .bullet-container {
+  display: none;
+}
+
 /*  ===== Colors & Settings for each panel =====    */
+
+/*          LISTS            */
+
+[data-refs-self*="admon-lists"] > .block-children-container > .block-children > .ls-block > .flex > .mr-1 {
+    border-color: rgb(124, 77, 255) !important;
+}
+[data-refs-self*='admon-lists'] > div > div > div > div > div > .block-content-inner {
+    background: rgb(124, 77, 255, 0.1) !important;
+    border-left-color: rgb(124, 77, 255) !important;
+}
+[data-refs-self*='admon-lists'] > div > div > div > div > div > .block-content-inner .page-ref {
+    color: rgb(124, 77, 255) !important;
+}
+
+[data-refs-self*='admon-lists'] > div > div > div > div > div > .block-body {
+    border-left-color: rgb(124, 77, 255) !important;
+}
+
+a.tag[data-ref="admon-lists"]:after {
+    content: "\eb6b";
+    color: rgb(124, 77, 255);
+}
 
 /*          TIPS            */
 [data-refs-self*="admon-tips"] > .block-children-container > .block-children > .ls-block > .flex > .mr-1 {
