@@ -84,7 +84,7 @@ a.tag[data-ref*="admon-"] {
 }
 
 /* Create the top bar */
-.content > .blocks-container > div > div > .ls-block[data-refs-self*='admon-'] > div > div > div > div > div > .block-content-inner {
+:is(.content > .blocks-container) .ls-block[data-refs-self*='admon-'] > div > div > div > div > div > .block-content-inner {
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 5px;
@@ -98,7 +98,7 @@ a.tag[data-ref*="admon-"] {
     margin-top: 5px;
 }
 /* This will create the body for blocks that contain multiple lines */
-.content > .blocks-container > div > div > .ls-block[data-refs-self*='admon-'] > .flex > .flex > .flex > .flex-1 > .block-content > .block-body {
+:is(.content > .blocks-container) .ls-block[data-refs-self*='admon-'] > .flex > .flex > .flex > .flex-1 > .block-content > .block-body {
     background: var(--ls-secondary-background-color);
     border-left: 4px solid;
     border-top-left-radius: 0px;
@@ -121,31 +121,31 @@ a.tag[data-ref*="admon-"]:after {
 }
 
 /* ===  Panel for Child Blocks  === */
-.content > .blocks-container > div > div > .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children-left-border {
+:is(.content > .blocks-container) .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children-left-border {
     background: transparent;
 }
-.content > .blocks-container > div > div > .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children {
+:is(.content > .blocks-container) .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children {
     border: 0px solid;
 }
 /* Adjust the first child blocks margin to align with top-bar */
-.content > .blocks-container > div > div > .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block:first-child > .flex {
+:is(.content > .blocks-container) .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block:first-child > .flex {
     margin-top: -4px;
 }
-.content > .blocks-container > div > div > .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block > .flex > .mr-1 {
+:is(.content > .blocks-container) .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block > .flex > .mr-1 {
     background: var(--ls-secondary-background-color);
     border-left: 4px solid;
     margin-left: 1px;
 }
 /* Change the style of the last child block */
-.content > .blocks-container > div > div > .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block:last-child > .flex > div.mr-1.flex.flex-row.items-center {
+:is(.content > .blocks-container) .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block:last-child > .flex > div.mr-1.flex.flex-row.items-center {
       border-bottom-left-radius: 2px;
 }
 
-.content > .blocks-container > div > div > .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block > .flex {
+:is(.content > .blocks-container) .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block > .flex {
     margin-top: -5px;
 }
 
-.content > .blocks-container > div > div > .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block > .flex > .block-content-wrapper {
+:is(.content > .blocks-container) .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block > .flex > .block-content-wrapper {
     background: var(--ls-secondary-background-color);
     margin-left: -8px;
     margin-right: 3px;
@@ -153,7 +153,7 @@ a.tag[data-ref*="admon-"]:after {
     width: 100%;
 }
 /* Forces the bullet to fill the height space of the block */
-.content > .blocks-container > div > div > .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block > .flex > div.mr-1.flex.flex-row.items-center {
+:is(.content > .blocks-container) .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block > .flex > div.mr-1.flex.flex-row.items-center {
     height: auto !important;
 }
 
@@ -239,7 +239,7 @@ a.tag[data-ref*="admon-"]:after {
 
 /*      ===== LISTS PANEL =====     */
 /* Hide Title in Query */
-.color-level > .flex > .initial > div > .blocks-container > .lazy-visibility > .fade-enter > .ls-block[data-refs-self*='admon-lists'] > .block-children-container > .block-children > .ls-block > .flex > .block-content-wrapper .foldable-title, .content > .blocks-container > div > div > .ls-block[data-refs-self*="admon-lists"] > .block-children-container > .block-children > .ls-block > .flex > .block-content-wrapper .foldable-title {
+.color-level > .flex > .initial > div > .blocks-container > .lazy-visibility > .fade-enter > .ls-block[data-refs-self*='admon-lists'] > .block-children-container > .block-children > .ls-block > .flex > .block-content-wrapper .foldable-title, .content > .blocks-container > div > div > .ls-block[data-refs-self*="admon-lists"] > .block-children-container > .block-children > .ls-block > .flex > .block-content-wrapper .foldable-title, .ls-block[data-refs-self*="admon-lists"] > .block-children-container > .block-children > .ls-block > .flex > .flex > .flex > .flex-1 > .block-content > .flex > .flex-1 > .inline > .dsl-query > .lazy-visibility > .fade-enter > .custom-query > .flex > .content > .foldable-title, .ls-block[data-refs-self*="admon-lists"] > .block-children-container > .block-children > .ls-block > .flex > .flex > .flex > .flex-1 > .block-content > .flex > .flex-1 > .inline > .dsl-query > .lazy-visibility > .fade-enter > .custom-query > .flex > .initial > div .foldable-title {
   display: none;
 }
 
@@ -272,7 +272,7 @@ a.tag[data-ref*="admon-"]:after {
     border-color: rgb(124, 77, 255) !important;
 }
 [data-refs-self*='admon-lists'] > div > div > div > div > div > .block-content-inner {
-    background: rgb(124, 77, 255, 0.1) !important;
+    background: rgb(124, 77, 255, 0.2) !important;
     border-left-color: rgb(124, 77, 255) !important;
 }
 [data-refs-self*='admon-lists'] > div > div > div > div > div > .block-content-inner .page-ref {
@@ -293,7 +293,7 @@ a.tag[data-ref="admon-lists"]:after {
     border-color: rgb(0, 191, 165) !important;
 }
 [data-refs-self*='admon-tips'] > div > div > div > div > div > .block-content-inner {
-    background: rgb(0, 191, 165, 0.1) !important;
+    background: rgb(0, 191, 165, 0.2) !important;
     border-left-color: rgb(0, 191, 165) !important;
 }
 [data-refs-self*='admon-tips'] > div > div > div > div > div > .block-content-inner .page-ref {
@@ -314,7 +314,7 @@ a.tag[data-ref="admon-tips"]:after {
     border-color: rgb(255, 145, 0) !important;
 }
 [data-refs-self*='admon-warning'] > div > div > div > div > div > .block-content-inner {
-    background: rgb(255, 145, 0, 0.1);
+    background: rgb(255, 145, 0, 0.2);
     border-left-color: rgb(255, 145, 0) !important;
 }
 [data-refs-self*='admon-warning'] > div > div > div > div > div > .block-content-inner .page-ref {
@@ -335,7 +335,7 @@ a.tag[data-ref="admon-warning"]:after {
     border-color: rgb(0, 184, 212) !important;
 }
 [data-refs-self*='admon-info'] > div > div > div > div > div > .block-content-inner {
-    background: rgb(0, 184, 212, 0.1) !important;
+    background: rgb(0, 184, 212, 0.2) !important;
     border-left-color: rgb(0, 184, 212) !important;
 }
 [data-refs-self*='admon-info'] > div > div > div > div > div > .block-content-inner .page-ref {
@@ -356,7 +356,7 @@ a.tag[data-ref="admon-info"]:after {
     border-color: rgb(0, 200, 83) !important;
 }
 [data-refs-self*='admon-success'] > div > div > div > div > div > .block-content-inner {
-    background: rgb(0, 200, 83, 0.1) !important;
+    background: rgb(0, 200, 83, 0.2) !important;
     border-left-color: rgb(0, 200, 83) !important;
 }
 [data-refs-self*='admon-success'] > div > div > div > div > div > .block-content-inner .page-ref {
@@ -377,7 +377,7 @@ a.tag[data-ref="admon-success"]:after {
     border-color: rgb(100, 221, 23) !important;
 }
 [data-refs-self*='admon-question'] > div > div > div > div > div > .block-content-inner {
-    background: rgb(100, 221, 23, 0.1) !important;
+    background: rgb(100, 221, 23, 0.2) !important;
     border-left-color: rgb(100, 221, 23) !important;
 }
 [data-refs-self*='admon-question'] > div > div > div > div > div > .block-content-inner .page-ref {
@@ -398,7 +398,7 @@ a.tag[data-ref="admon-question"]:after {
     border-color: rgb(255, 82, 82) !important;
 }
 [data-refs-self*='admon-failure'] > div > div > div > div > div > .block-content-inner {
-    background: rgb(255, 82, 82, 0.1) !important;
+    background: rgb(255, 82, 82, 0.2) !important;
     border-left-color: rgb(255, 82, 82) !important;
 }
 [data-refs-self*='admon-failure'] > div > div > div > div > div > .block-content-inner .page-ref {
@@ -419,7 +419,7 @@ a.tag[data-ref="admon-failure"]:after {
     border-color: rgb(255, 23, 68) !important;
 }
 [data-refs-self*='admon-danger'] > div > div > div > div > div > .block-content-inner {
-    background: rgb(255, 23, 68, 0.1) !important;
+    background: rgb(255, 23, 68, 0.2) !important;
     border-left-color: rgb(255, 23, 68) !important;
 }
 [data-refs-self*='admon-danger'] > div > div > div > div > div > .block-content-inner .page-ref {
@@ -440,7 +440,7 @@ a.tag[data-ref="admon-danger"]:after {
     border-color: rgb(245, 0, 87) !important;
 }
 [data-refs-self*='admon-bug'] > div > div > div > div > div > .block-content-inner {
-    background: rgb(245, 0, 87, 0.1) !important;
+    background: rgb(245, 0, 87, 0.2) !important;
     border-left-color: rgb(245, 0, 87) !important;
 }
 [data-refs-self*='admon-bug'] > div > div > div > div > div > .block-content-inner .page-ref {
