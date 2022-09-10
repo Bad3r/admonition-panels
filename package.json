@@ -1,7 +1,7 @@
 {
   "name": "Admonition Panels",
   "author": "nmartin84",
-  "version": "0.0.6a",
+  "version": "0.0.7",
   "description": "tag a parent block with \"#admon-info{warning,tips,failure,danger,quote} to start\"",
   "main": "./index.html",
   "logseq": {
