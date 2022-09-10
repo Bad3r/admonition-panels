@@ -201,6 +201,11 @@ a.tag[data-ref*="admon-"]:after {
     margin-right: 5px;
 }
 
+/* Hide each results background color */
+.ls-block[data-refs-self*='admon-'] .lazy-visibility > .fade-enter > .color-level > .flex > .initial > div {
+    background: transparent;
+}
+
 /* ===  Panel for Child Blocks  === */
 .color-level > .flex > .initial > div > .blocks-container > .lazy-visibility > .fade-enter > .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children-left-border {
     background: transparent;
