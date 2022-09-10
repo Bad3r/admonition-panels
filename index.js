@@ -71,9 +71,7 @@ a.tag[data-ref*="admon-"] {
 /*  =====   MAIN GUI VIEW   ===== */
 
 /* This will hide the bullet for admonition panels */
-[data-refs-self*='admon-'] > div > div > a > .bullet-container {
-    display: none;
-}
+
 /* Hide brackets for page-refs in panels */
 [data-refs-self*='admon-'] > div > div > div > div > div > .block-content-inner .page-reference .bracket {
     display: none;
@@ -120,6 +118,34 @@ a.tag[data-ref*="admon-"]:after {
     margin-right: 5px;
 }
 
+/* Adds support for properties defined in admonition panels */
+
+:is(.content > .blocks-container) .ls-block[data-refs-self*='admon-'] .block-properties {
+    border: 0px solid;
+    margin: auto;
+    border-left: 4px solid;
+    border-radius: 0px;
+    padding-left: 16px;
+    border-color: currentColor;
+    padding-bottom: 20px;
+    background: currentColor;
+}
+
+:is(.content > .blocks-container) .ls-block[data-refs-self*='admon-'] .block-properties > div:first-child {
+  margin-top: -5px;
+}
+
+:is(.content > .blocks-container) .ls-block[data-refs-self*='admon-'] .block-properties > div {
+    background: var(--ls-secondary-background-color);
+    padding-left: 12px;
+    display: list-item;
+    list-style: inside;
+}
+/* Style block properties bullets */
+:is(.content > .blocks-container) .ls-block[data-refs-self*='admon-'] .block-properties > div::marker {
+    color: var(--ls-block-bullet-color);
+}
+
 /* ===  Panel for Child Blocks  === */
 :is(.content > .blocks-container) .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children-left-border {
     background: transparent;
@@ -131,10 +157,13 @@ a.tag[data-ref*="admon-"]:after {
 :is(.content > .blocks-container) .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block:first-child > .flex {
     margin-top: -4px;
 }
+:is(.content > .blocks-container) .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block:first-child {
+    margin-top: 2px;
+}
 :is(.content > .blocks-container) .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block > .flex > .mr-1 {
     background: var(--ls-secondary-background-color);
     border-left: 4px solid;
-    margin-left: 1px;
+    margin-left: 17px;
 }
 /* Change the style of the last child block */
 :is(.content > .blocks-container) .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block:last-child > .flex > div.mr-1.flex.flex-row.items-center {
@@ -148,8 +177,8 @@ a.tag[data-ref*="admon-"]:after {
 :is(.content > .blocks-container) .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block > .flex > .block-content-wrapper {
     background: var(--ls-secondary-background-color);
     margin-left: -8px;
-    margin-right: 3px;
-    padding: 5px;
+    margin-right: 0px;
+    padding: 5px 10px;
     width: 100%;
 }
 /* Forces the bullet to fill the height space of the block */
@@ -292,6 +321,10 @@ a.tag[data-ref="admon-lists"]:after {
     content: "\eb6b";
     color: rgb(124, 77, 255);
 }
+:is(.content > .blocks-container) .ls-block[data-refs-self*='admon-lists'] .block-properties {
+    background: rgb(124, 77, 255, 0.2);
+    border-color: rgb(124, 77, 255);
+}
 
 /*          TIPS            */
 [data-refs-self*="admon-tips"] > .block-children-container > .block-children > .ls-block > .flex > .mr-1 {
@@ -312,6 +345,10 @@ a.tag[data-ref="admon-lists"]:after {
 a.tag[data-ref="admon-tips"]:after {
     content: "\ec2c";
     color: rgb(0, 191, 165);
+}
+:is(.content > .blocks-container) .ls-block[data-refs-self*='admon-tips'] .block-properties {
+    background: rgb(0, 191, 165, 0.2);
+    border-color: rgb(0, 191, 165);
 }
 
 /*          WARNING            */
@@ -335,6 +372,11 @@ a.tag[data-ref="admon-warning"]:after {
     color: rgb(255, 145, 0) !important;
 }
 
+:is(.content > .blocks-container) .ls-block[data-refs-self*='admon-warning'] .block-properties {
+    background: rgb(255, 145, 0, 0.2);
+    border-color: rgb(255, 145, 0);
+}
+
 /*          INFO            */
 [data-refs-self*="admon-info"] > .block-children-container > .block-children > .ls-block > .flex > .mr-1 {
     border-color: rgb(0, 184, 212) !important;
@@ -354,6 +396,11 @@ a.tag[data-ref="admon-warning"]:after {
 a.tag[data-ref="admon-info"]:after {
     content: "\eac5";
     color: rgb(0, 184, 212) !important;
+}
+
+:is(.content > .blocks-container) .ls-block[data-refs-self*='admon-info'] .block-properties {
+    background: rgb(0, 184, 212, 0.2);
+    border-color: rgb(0, 184, 212);
 }
 
 /*          SUCCESS            */
@@ -377,6 +424,11 @@ a.tag[data-ref="admon-success"]:after {
     color: rgb(0, 200, 83) !important;
 }
 
+:is(.content > .blocks-container) .ls-block[data-refs-self*='admon-success'] .block-properties {
+    background: rgb(0, 200, 83, 0.2);
+    border-color: rgb(0, 200, 83);
+}
+
 /*          QUESTION            */
 [data-refs-self*="admon-question"] > .block-children-container > .block-children > .ls-block > .flex > .mr-1 {
     border-color: rgb(100, 221, 23) !important;
@@ -396,6 +448,11 @@ a.tag[data-ref="admon-success"]:after {
 a.tag[data-ref="admon-question"]:after {
     content: "\ec9d";
     color: rgb(100, 221, 23) !important;
+}
+
+:is(.content > .blocks-container) .ls-block[data-refs-self*='admon-question'] .block-properties {
+    background: rgb(100, 221, 23, 0.2);
+    border-color: rgb(100, 221, 23);
 }
 
 /*          FAILURE            */
@@ -419,6 +476,11 @@ a.tag[data-ref="admon-failure"]:after {
     color: rgb(255, 82, 82) !important;
 }
 
+:is(.content > .blocks-container) .ls-block[data-refs-self*='admon-failure'] .block-properties {
+    background: rgb(255, 82, 82, 0.2);
+    border-color: rgb(255, 82, 82);
+}
+
 /*          DANGER            */
 [data-refs-self*="admon-danger"] > .block-children-container > .block-children > .ls-block > .flex > .mr-1 {
     border-color: rgb(255, 23, 68) !important;
@@ -438,6 +500,11 @@ a.tag[data-ref="admon-failure"]:after {
 a.tag[data-ref="admon-danger"]:after {
     content: "\ec2f";
     color: rgb(255, 23, 68) !important;
+}
+
+:is(.content > .blocks-container) .ls-block[data-refs-self*='admon-danger'] .block-properties {
+    background: rgb(255, 23, 68, 0.2);
+    border-color: rgb(255, 23, 68);
 }
 
 /*          BUG            */
@@ -461,6 +528,11 @@ a.tag[data-ref="admon-bug"]:after {
     color: rgb(245, 0, 87) !important;
 }
 
+:is(.content > .blocks-container) .ls-block[data-refs-self*='admon-bug'] .block-properties {
+    background: rgb(245, 0, 87, 0.2);
+    border-color: rgb(245, 0, 87);
+}
+
 /*          QUOTE            */
 [data-refs-self*="admon-quote"] > .block-children-container > .block-children > .ls-block > .flex > .mr-1 {
     border-color: rgb(158, 158, 158) !important;
@@ -480,6 +552,11 @@ a.tag[data-ref="admon-bug"]:after {
 a.tag[data-ref="admon-quote"]:after {
     content: "\efbe";
     color: rgb(158, 158, 158) !important;
+}
+
+:is(.content > .blocks-container) .ls-block[data-refs-self*='admon-quote'] .block-properties {
+    background: rgb(158, 158, 158, 0.2);
+    border-color: rgb(158, 158, 158);
 }
 
     `);
