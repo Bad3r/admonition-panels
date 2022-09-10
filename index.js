@@ -80,6 +80,11 @@ a.tag[data-ref*="admon-"] {
 [data-refs-self*='admon-'] > div > div > div > div > div > .block-content-inner .page-reference:hover {
     background: transparent;
 }
+/* fixes bullet location */
+.color-level > .flex > .initial > div > .blocks-container > .lazy-visibility > .fade-enter > .ls-block[data-refs-self*='admon-lists'] > .block-children-container > .block-children > .ls-block > .flex > .mr-1 .bullet-container, .content > .blocks-container > div > div > .ls-block[data-refs-self*="admon-lists"] > .block-children-container > .block-children > .ls-block > .flex > .mr-1 .bullet-container {
+    position: relative;
+    top: -4px;
+}
 
 /* Create the top bar */
 :is(.content > .blocks-container) .ls-block[data-refs-self*='admon-'] > div > div > div > div > div > .block-content-inner {
@@ -153,36 +158,32 @@ a.tag[data-ref*="admon-"]:after {
 }
 /* Adjust the first child blocks margin to align with top-bar */
 :is(.content > .blocks-container) .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block:first-child > .flex {
-    margin-top: -4px;
+    margin-top: -6px;
+    padding-top: 10px;
+}
+:is(.content > .blocks-container) .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block:last-child > .flex {
+    padding-bottom: 10px;
 }
 :is(.content > .blocks-container) .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block:first-child {
     margin-top: 2px;
 }
-:is(.content > .blocks-container) .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block > .flex > .mr-1 {
+
+:is(.content > .blocks-container) .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block > .flex {
     background: var(--ls-secondary-background-color);
     border-left: 4px solid;
     margin-left: 17px;
-}
-/* Change the style of the last child block */
-:is(.content > .blocks-container) .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block:last-child > .flex > div.mr-1.flex.flex-row.items-center {
-      border-bottom-left-radius: 2px;
-}
-
-:is(.content > .blocks-container) .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block > .flex {
     margin-top: -5px;
+    margin-right: 8px;
 }
 
 :is(.content > .blocks-container) .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block > .flex > .block-content-wrapper {
     background: var(--ls-secondary-background-color);
     margin-left: -8px;
     margin-right: 0px;
-    padding: 5px 10px;
+    padding-left: 5px;
     width: 100%;
 }
 /* Forces the bullet to fill the height space of the block */
-:is(.content > .blocks-container) .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block > .flex > div.mr-1.flex.flex-row.items-center {
-    height: auto !important;
-}
 
 /*  =====   REFERENCES PANEL   ===== */
 
@@ -243,15 +244,16 @@ a.tag[data-ref*="admon-"]:after {
 /* Adjust the first child blocks margin to align with top-bar */
 .color-level > .flex > .initial > div > .blocks-container > .lazy-visibility > .fade-enter > .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block:first-child > .flex {
     margin-top: -4px;
+    padding-top: 10px;
 }
-.color-level > .flex > .initial > div > .blocks-container > .lazy-visibility > .fade-enter > .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block > .flex > .mr-1 {
+.color-level > .flex > .initial > div > .blocks-container > .lazy-visibility > .fade-enter > .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block:last-child > .flex {
+    padding-bottom: 10px;
+}
+.color-level > .flex > .initial > div > .blocks-container > .lazy-visibility > .fade-enter > .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block > .flex {
     background: var(--ls-tertiary-background-color);
     border-left: 4px solid;
     margin-left: 17px;
-}
-/* Change the style of the last child block */
-.color-level > .flex > .initial > div > .blocks-container > .lazy-visibility > .fade-enter > .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block:last-child > .flex > div.mr-1.flex.flex-row.items-center {
-      border-bottom-left-radius: 2px;
+    margin-right: 8px;
 }
 
 .color-level > .flex > .initial > div > .blocks-container > .lazy-visibility > .fade-enter > .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block > .flex {
@@ -262,11 +264,7 @@ a.tag[data-ref*="admon-"]:after {
     background: var(--ls-tertiary-background-color);
     margin-left: -8px;
     margin-right: 0px;
-    padding: 5px;
-}
-/* Forces the bullet to fill the height space of the block */
-.color-level > .flex > .initial > div > .blocks-container > .lazy-visibility > .fade-enter > .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block > .flex > div.mr-1.flex.flex-row.items-center {
-    height: auto !important;
+    padding-left: 5px;
 }
 
 /*      ===== LISTS PANEL =====     */
@@ -300,7 +298,7 @@ a.tag[data-ref*="admon-"]:after {
 
 /*          LISTS            */
 
-[data-refs-self*="admon-lists"] > .block-children-container > .block-children > .ls-block > .flex > .mr-1 {
+[data-refs-self*="admon-lists"] > .block-children-container > .block-children > .ls-block > .flex {
     border-color: rgb(124, 77, 255) !important;
 }
 [data-refs-self*='admon-lists'] > div > div > div > div > div > .block-content-inner {
@@ -325,7 +323,7 @@ a.tag[data-ref="admon-lists"]:after {
 }
 
 /*          TIPS            */
-[data-refs-self*="admon-tips"] > .block-children-container > .block-children > .ls-block > .flex > .mr-1 {
+[data-refs-self*="admon-tips"] > .block-children-container > .block-children > .ls-block > .flex {
     border-color: rgb(0, 191, 165) !important;
 }
 [data-refs-self*='admon-tips'] > div > div > div > div > div > .block-content-inner {
@@ -350,7 +348,7 @@ a.tag[data-ref="admon-tips"]:after {
 }
 
 /*          WARNING            */
-[data-refs-self*="admon-warning"] > .block-children-container > .block-children > .ls-block > .flex > .mr-1 {
+[data-refs-self*="admon-warning"] > .block-children-container > .block-children > .ls-block > .flex {
     border-color: rgb(255, 145, 0) !important;
 }
 [data-refs-self*='admon-warning'] > div > div > div > div > div > .block-content-inner {
@@ -376,7 +374,7 @@ a.tag[data-ref="admon-warning"]:after {
 }
 
 /*          INFO            */
-[data-refs-self*="admon-info"] > .block-children-container > .block-children > .ls-block > .flex > .mr-1 {
+[data-refs-self*="admon-info"] > .block-children-container > .block-children > .ls-block > .flex {
     border-color: rgb(0, 184, 212) !important;
 }
 [data-refs-self*='admon-info'] > div > div > div > div > div > .block-content-inner {
@@ -402,7 +400,7 @@ a.tag[data-ref="admon-info"]:after {
 }
 
 /*          SUCCESS            */
-[data-refs-self*="admon-success"] > .block-children-container > .block-children > .ls-block > .flex > .mr-1 {
+[data-refs-self*="admon-success"] > .block-children-container > .block-children > .ls-block > .flex {
     border-color: rgb(0, 200, 83) !important;
 }
 [data-refs-self*='admon-success'] > div > div > div > div > div > .block-content-inner {
@@ -428,7 +426,7 @@ a.tag[data-ref="admon-success"]:after {
 }
 
 /*          QUESTION            */
-[data-refs-self*="admon-question"] > .block-children-container > .block-children > .ls-block > .flex > .mr-1 {
+[data-refs-self*="admon-question"] > .block-children-container > .block-children > .ls-block > .flex {
     border-color: rgb(100, 221, 23) !important;
 }
 [data-refs-self*='admon-question'] > div > div > div > div > div > .block-content-inner {
@@ -454,7 +452,7 @@ a.tag[data-ref="admon-question"]:after {
 }
 
 /*          FAILURE            */
-[data-refs-self*="admon-failure"] > .block-children-container > .block-children > .ls-block > .flex > .mr-1 {
+[data-refs-self*="admon-failure"] > .block-children-container > .block-children > .ls-block > .flex {
     border-color: rgb(255, 82, 82) !important;
 }
 [data-refs-self*='admon-failure'] > div > div > div > div > div > .block-content-inner {
@@ -480,7 +478,7 @@ a.tag[data-ref="admon-failure"]:after {
 }
 
 /*          DANGER            */
-[data-refs-self*="admon-danger"] > .block-children-container > .block-children > .ls-block > .flex > .mr-1 {
+[data-refs-self*="admon-danger"] > .block-children-container > .block-children > .ls-block > .flex {
     border-color: rgb(255, 23, 68) !important;
 }
 [data-refs-self*='admon-danger'] > div > div > div > div > div > .block-content-inner {
@@ -506,7 +504,7 @@ a.tag[data-ref="admon-danger"]:after {
 }
 
 /*          BUG            */
-[data-refs-self*="admon-bug"] > .block-children-container > .block-children > .ls-block > .flex > .mr-1 {
+[data-refs-self*="admon-bug"] > .block-children-container > .block-children > .ls-block > .flex {
     border-color: rgb(245, 0, 87) !important;
 }
 [data-refs-self*='admon-bug'] > div > div > div > div > div > .block-content-inner {
@@ -532,7 +530,7 @@ a.tag[data-ref="admon-bug"]:after {
 }
 
 /*          QUOTE            */
-[data-refs-self*="admon-quote"] > .block-children-container > .block-children > .ls-block > .flex > .mr-1 {
+[data-refs-self*="admon-quote"] > .block-children-container > .block-children > .ls-block > .flex {
     border-color: rgb(158, 158, 158) !important;
 }
 [data-refs-self*='admon-quote'] > div > div > div > div > div > .block-content-inner {
