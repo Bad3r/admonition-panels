@@ -174,6 +174,7 @@ a.tag[data-ref*="admon-"]:after {
     margin-left: 17px;
     margin-top: -5px;
     margin-right: 8px;
+    padding: 2px 0px;
 }
 
 :is(.content > .blocks-container) .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block > .flex > .block-content-wrapper {
@@ -254,6 +255,7 @@ a.tag[data-ref*="admon-"]:after {
     border-left: 4px solid;
     margin-left: 17px;
     margin-right: 8px;
+    padding: 2px 0px;
 }
 
 .color-level > .flex > .initial > div > .blocks-container > .lazy-visibility > .fade-enter > .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block > .flex {
