@@ -163,6 +163,7 @@ a.tag[data-ref*="admon-"]:after {
 }
 :is(.content > .blocks-container) .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block:last-child > .flex {
     padding-bottom: 10px;
+    border-radius: 2px;
 }
 :is(.content > .blocks-container) .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block:first-child {
     margin-top: 2px;
@@ -249,6 +250,7 @@ a.tag[data-ref*="admon-"]:after {
 }
 .color-level > .flex > .initial > div > .blocks-container > .lazy-visibility > .fade-enter > .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block:last-child > .flex {
     padding-bottom: 10px;
+    border-radius: 2px;
 }
 .color-level > .flex > .initial > div > .blocks-container > .lazy-visibility > .fade-enter > .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block > .flex {
     background: var(--ls-tertiary-background-color);
