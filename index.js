@@ -320,6 +320,7 @@ a.tag[data-ref*="admon-"]:after {
     max-width: -webkit-fill-available;
     min-width: auto;
     width: inherit;
+    border: 1px solid var(--ls-border-color);
 }
 /* header */
 [data-refs-self*='kanban']
