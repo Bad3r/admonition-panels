@@ -298,6 +298,136 @@ a.tag[data-ref*="admon-"]:after {
   display: none;
 }
 
+/* === Kanban View by Cannibalox === */
+/* */
+[data-refs-self*='kanban'] > .block-children-container > .block-children {
+    display: inline-flex;
+    position: relative;
+    margin: 0 10px;
+    border: 0;
+    overflow-x: auto;
+}
+/* column */
+[data-refs-self*='kanban']
+    > .block-children-container
+    > .block-children
+    > .ls-block {
+    display: inline-block;
+    padding: 0;
+    margin-right: 10px;
+    border-radius: 4px;
+    background-color: var(--ls-secondary-background-color);
+    max-width: -webkit-fill-available;
+    min-width: auto;
+    width: inherit;
+}
+/* header */
+[data-refs-self*='kanban']
+    > .block-children-container
+    > .block-children
+    > .ls-block
+    > .flex-row {
+    background-color: var(--ls-secondary-background-color);
+    border-bottom: 1px solid var(--ls-border-color);
+    padding: 4px 6px;
+}
+[data-refs-self*='kanban']
+    > .block-children-container
+    > .block-children
+    > .ls-block
+    > .flex-row
+    > .block-content-wrapper {
+    width: 100%;
+}
+[data-refs-self*='kanban']
+    > .block-children-container
+    > .block-children
+    > .ls-block
+    > .flex-row
+    > .block-content-wrapper
+    > .flex {
+    overflow: hidden;
+}
+[data-refs-self*='kanban']
+    > .block-children-container
+    > .block-children
+    > .ls-block
+    > .flex-row
+    .inline,
+[data-refs-self*='kanban']
+    > .block-children-container
+    > .block-children
+    > .ls-block
+    > .flex-row
+    .inline
+    .page-ref {
+    font-weight: bold;
+}
+[data-refs-self*='kanban'] .todo-master-progress-bar {
+    max-width: 90%;
+}
+/* content */
+[data-refs-self*='kanban']
+    > .block-children-container
+    > .block-children
+    > .ls-block
+    > .block-children-container {
+    margin: 0 !important;
+}
+[data-refs-self*='kanban']
+    > .block-children-container
+    > .block-children
+    > .ls-block::before {
+    display: none;
+}
+[data-refs-self*='kanban']
+    > .block-children-container
+    > .block-children
+    > .ls-block:last-child {
+    margin-bottom: 0;
+}
+[data-refs-self*='kanban']
+    > .block-children-container
+    > .block-children
+    > .ls-block
+    > .flex-row
+    > .mr-1 {
+    display: none;
+}
+[data-refs-self*='kanban']
+    > .block-children-container
+    > .block-children
+    > .ls-block
+    > .block-children-container
+    > .block-children {
+    padding: 10px 0;
+    border: 0;
+}
+
+/*  ===== KANBANS ======  */
+.ls-block[data-refs-self*="kanban"] > .block-children-container > .block-children > .ls-block[data-refs-self*="admon-"] .block-content-inner {
+    background: transparent !important;
+    border-left: 0px solid !important;
+}
+.ls-block[data-refs-self*="kanban"] > .block-children-container > .block-children > .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block > .flex {
+    background: transparent;
+    border-left: 0px solid;
+    margin: 0px;
+    padding: 0px;
+    margin-left: -10px;
+}
+
+.ls-block[data-refs-self*="kanban"] > .block-children-container > .block-children > .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block > .flex > .block-content-wrapper {
+    background: transparent;
+}
+
+.ls-block[data-refs-self*="kanban"] > .block-children-container > .block-children > .ls-block[data-refs-self*="admon-"] > .flex.flex-row.pr-2 {
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    text-align: center;
+    padding: 0px;
+}
+
 /*  ===== Colors & Settings for each panel =====    */
 
 /*          LISTS            */
@@ -326,6 +456,10 @@ a.tag[data-ref="admon-lists"]:after {
     border-color: rgb(124, 77, 255);
 }
 
+.ls-block[data-refs-self*="kanban"] > .block-children-container > .block-children > .ls-block[data-refs-self*="admon-lists"] > .flex.flex-row.pr-2 {
+    background: rgb(124, 77, 255, 0.2);
+}
+
 /*          TIPS            */
 [data-refs-self*="admon-tips"] > .block-children-container > .block-children > .ls-block > .flex {
     border-color: rgb(0, 191, 165) !important;
@@ -349,6 +483,10 @@ a.tag[data-ref="admon-tips"]:after {
 :is(.content > .blocks-container, .color-level) .ls-block[data-refs-self*='admon-tips'] > .flex > .flex > .flex > .flex-1 > .block-content > .block-properties {
     background: rgb(0, 191, 165, 0.2);
     border-color: rgb(0, 191, 165);
+}
+
+.ls-block[data-refs-self*="kanban"] > .block-children-container > .block-children > .ls-block[data-refs-self*="admon-tips"] > .flex.flex-row.pr-2 {
+    background: rgb(0, 191, 165, 0.2);
 }
 
 /*          WARNING            */
@@ -377,6 +515,10 @@ a.tag[data-ref="admon-warning"]:after {
     border-color: rgb(255, 145, 0);
 }
 
+.ls-block[data-refs-self*="kanban"] > .block-children-container > .block-children > .ls-block[data-refs-self*="admon-warning"] > .flex.flex-row.pr-2 {
+    background: rgb(255, 145, 0, 0.2);
+}
+
 /*          INFO            */
 [data-refs-self*="admon-info"] > .block-children-container > .block-children > .ls-block > .flex {
     border-color: rgb(0, 184, 212) !important;
@@ -401,6 +543,10 @@ a.tag[data-ref="admon-info"]:after {
 :is(.content > .blocks-container, .color-level) .ls-block[data-refs-self*='admon-info'] > .flex > .flex > .flex > .flex-1 > .block-content > .block-properties {
     background: rgb(0, 184, 212, 0.2);
     border-color: rgb(0, 184, 212);
+}
+
+.ls-block[data-refs-self*="kanban"] > .block-children-container > .block-children > .ls-block[data-refs-self*="admon-info"] > .flex.flex-row.pr-2 {
+    background: rgb(0, 184, 212, 0.2);
 }
 
 /*          SUCCESS            */
@@ -429,6 +575,10 @@ a.tag[data-ref="admon-success"]:after {
     border-color: rgb(0, 200, 83);
 }
 
+.ls-block[data-refs-self*="kanban"] > .block-children-container > .block-children > .ls-block[data-refs-self*="admon-success"] > .flex.flex-row.pr-2 {
+    background: rgb(0, 200, 83, 0.2);
+}
+
 /*          QUESTION            */
 [data-refs-self*="admon-question"] > .block-children-container > .block-children > .ls-block > .flex {
     border-color: rgb(100, 221, 23) !important;
@@ -453,6 +603,10 @@ a.tag[data-ref="admon-question"]:after {
 :is(.content > .blocks-container, .color-level) .ls-block[data-refs-self*='admon-question'] > .flex > .flex > .flex > .flex-1 > .block-content > .block-properties {
     background: rgb(100, 221, 23, 0.2);
     border-color: rgb(100, 221, 23);
+}
+
+.ls-block[data-refs-self*="kanban"] > .block-children-container > .block-children > .ls-block[data-refs-self*="admon-question"] > .flex.flex-row.pr-2 {
+    rgb(100, 221, 23, 0.2);
 }
 
 /*          FAILURE            */
@@ -481,6 +635,10 @@ a.tag[data-ref="admon-failure"]:after {
     border-color: rgb(255, 82, 82);
 }
 
+.ls-block[data-refs-self*="kanban"] > .block-children-container > .block-children > .ls-block[data-refs-self*="admon-failure"] > .flex.flex-row.pr-2 {
+    background: rgb(255, 82, 82, 0.2);
+}
+
 /*          DANGER            */
 [data-refs-self*="admon-danger"] > .block-children-container > .block-children > .ls-block > .flex {
     border-color: rgb(255, 23, 68) !important;
@@ -505,6 +663,10 @@ a.tag[data-ref="admon-danger"]:after {
 :is(.content > .blocks-container, .color-level) .ls-block[data-refs-self*='admon-danger'] > .flex > .flex > .flex > .flex-1 > .block-content > .block-properties {
     background: rgb(255, 23, 68, 0.2);
     border-color: rgb(255, 23, 68);
+}
+
+.ls-block[data-refs-self*="kanban"] > .block-children-container > .block-children > .ls-block[data-refs-self*="admon-danger"] > .flex.flex-row.pr-2 {
+    rgb(255, 23, 68, 0.2);
 }
 
 /*          BUG            */
@@ -533,6 +695,10 @@ a.tag[data-ref="admon-bug"]:after {
     border-color: rgb(245, 0, 87);
 }
 
+.ls-block[data-refs-self*="kanban"] > .block-children-container > .block-children > .ls-block[data-refs-self*="admon-bug"] > .flex.flex-row.pr-2 {
+    background: rgb(245, 0, 87, 0.2);
+}
+
 /*          QUOTE            */
 [data-refs-self*="admon-quote"] > .block-children-container > .block-children > .ls-block > .flex {
     border-color: rgb(158, 158, 158) !important;
@@ -557,6 +723,10 @@ a.tag[data-ref="admon-quote"]:after {
 :is(.content > .blocks-container, .color-level) .ls-block[data-refs-self*='admon-quote'] > .flex > .flex > .flex > .flex-1 > .block-content > .block-properties {
     background: rgb(158, 158, 158, 0.2);
     border-color: rgb(158, 158, 158);
+}
+
+.ls-block[data-refs-self*="kanban"] > .block-children-container > .block-children > .ls-block[data-refs-self*="admon-quote"] > .flex.flex-row.pr-2 {
+    background: rgb(158, 158, 158, 0.2);
 }
 
     `);
