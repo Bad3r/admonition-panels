@@ -62,10 +62,16 @@ function main() {
     logseq.provideStyle(String.raw`
 /* ======    ADMONITIONS     ====== */
 
-a.tag[data-ref*="admon-"] {
+a.tag[data-ref*="admon-"], a.tag[data-ref*="admon-"]:not(.katex .tag) {
     background: transparent !important;
     border: 0px solid !important;
-    font-size: 0px;
+    font-size: 0px !important;
+    box-shadow: none !important;
+}
+
+/* ======   3rd Party Theme Fixes ====== */
+:is(.content > .blocks-container) .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block {
+    border-bottom-width: 0px !important;
 }
 
 /*  =====   MAIN GUI VIEW   ===== */
@@ -160,6 +166,7 @@ a.tag[data-ref*="admon-"]:after {
 :is(.content > .blocks-container) .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block:first-child > .flex {
     margin-top: -6px;
     padding-top: 10px;
+    border-top-left-radius: 0px;
 }
 :is(.content > .blocks-container) .ls-block[data-refs-self*="admon-"] > .block-children-container > .block-children > .ls-block:last-child > .flex {
     padding-bottom: 10px;
