@@ -24,5 +24,3 @@ Approach 2:
 - #admon-warning Warning!
   - Nested data goes here..
 ```
-
-![picture 2](images/12ad186f0db627d9a601421ee83d105f54c10d914b90f59dd634afe8cd1ff667.png)  
